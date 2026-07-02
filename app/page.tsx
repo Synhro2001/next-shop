@@ -9,6 +9,7 @@ import Card from "@/components/ui/Card/Card";
 import Modal from "@/components/ui/Modal/Modal";
 import Badge from "@/components/ui/Badge/Badge";
 import Spinner from "@/components/ui/Spinner/Spinner";
+import Avatar from "@/components/ui/Avatar/Avatar";
 
 
 export default function Home() {  
@@ -49,6 +50,7 @@ export default function Home() {
         <p>Test</p>
       </Badge>
       <Spinner/>
+      <Avatar src="" alt="Name" name="AV" size="lg"/>
       </div>
   
        {/* сюда делаем как в visam разные боксы с определенной информацией */}
