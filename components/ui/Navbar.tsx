@@ -27,16 +27,16 @@ export default function Navbar({
     return (
     <div className="p-4 ">
         <nav className=" flex justify-between items-center">
-            <h1 className="text-xl text-black font-bold z-70">{title}</h1>
+            <h1 className="text-xl text-black font-bold z-40">{title}</h1>
             <Button 
-                className="relative z-70 md:hidden bg-white"  
+                className="relative z-45 md:hidden bg-white"  
                 onClick={() => setOpen(!open)}
             >
                 {open ? <X size={28} color="black"/> : <Menu size={28} color="black"/>}
             </Button>
         </nav>
         <div className={`
-                fixed inset-0 bg-white z-50 
+                fixed inset-0 bg-white z-40 
                 transform transition-transform duration-300 ease-in-out
                 ${open ? "translate-x-0" : "-translate-x-full"}
             `}
