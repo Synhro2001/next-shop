@@ -7,7 +7,7 @@ export default function Spinner({
     className
 }: SpinnerProps) {
     return (
-        <span className={`rounded-full border-2 border-gray-300 border-t-blue-500 animate-spin
+        <span className={`inline-block rounded-full border-2 border-gray-300 border-t-blue-500 animate-spin
             ${spinnerSizes[size]}
             ${className ?? ""}`}/>
     )

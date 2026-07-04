@@ -1,8 +1,8 @@
 import { InputHTMLAttributes } from "react";
 
 export const inputVariants = {
-  primary: " outline-gray-400",
-  secondary: " outline-cyan-500",
+  primary: " outline-primary",
+  secondary: " outline-accent",
   danger: " outline-red-500",
 } as const;
 

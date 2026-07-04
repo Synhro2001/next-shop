@@ -12,6 +12,15 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  --color-primary: #9D6381;
+  --color-secondary: #FDECEF;
+  --color-accent: #0F110C;
+
+  /* --color-surface: #FFFFFF;
+  --color-border: #E2E8F0; */
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

@@ -2,24 +2,13 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import Button from "./Button/Button";
-
-type NavbarLink = {
-    label: string;
-    href: string;
-}
-type NavbarProps = {
-    title?: string;
-    bgColor: string;
-    textColor: string;
-    links: NavbarLink[];
-
-}
+import { NavbarProps } from "./navbar.types";
+import Link from "next/link";
 
 export default function Navbar({
-    title = "",
-    bgColor = "",
-    textColor = "",
+    title,
+    // bgColor,
+    // textColor,
     links = []
 }: NavbarProps) {
     const [open, setOpen] = useState(false);
@@ -28,12 +17,12 @@ export default function Navbar({
     <div className="p-4 ">
         <nav className=" flex justify-between items-center">
             <h1 className="text-xl text-black font-bold z-40">{title}</h1>
-            <Button 
-                className="relative z-45 md:hidden bg-white"  
+            <button 
+                className="relative z-50 md:hidden bg-white"  
                 onClick={() => setOpen(!open)}
             >
                 {open ? <X size={28} color="black"/> : <Menu size={28} color="black"/>}
-            </Button>
+            </button>
         </nav>
         <div className={`
                 fixed inset-0 bg-white z-40 
@@ -43,13 +32,14 @@ export default function Navbar({
         >
             <nav className="mt-20 flex flex-col gap-3 px-4">
                 {links.map((link) => (
-                    <a
+                    <Link
                         key={link.href}
                         href={link.href}
+                        onClick={() =>  setOpen(false)}
                         className="p-4 bg-gray-100 rounded-2xl"
                     >
                         {link.label}
-                    </a>
+                    </Link>
                 ))}
             </nav>
         </div>
