@@ -14,11 +14,11 @@ export default function Navbar({
     const [open, setOpen] = useState(false);
 
     return (
-    <div className="p-4 ">
+    <div className="p-4 bg-primary ">
         <nav className=" flex justify-between items-center">
-            <h1 className="text-xl text-black font-bold z-40">{title}</h1>
+            <Link href="/" className="text-xl text-black font-bold z-40">{title}</Link>
             <button 
-                className="relative z-50 md:hidden bg-white"  
+                className="relative z-50 md:hidden bg-"  
                 onClick={() => setOpen(!open)}
             >
                 {open ? <X size={28} color="black"/> : <Menu size={28} color="black"/>}
@@ -36,7 +36,7 @@ export default function Navbar({
                         key={link.href}
                         href={link.href}
                         onClick={() =>  setOpen(false)}
-                        className="p-4 bg-gray-100 rounded-2xl"
+                        className="p-4 bg-primary rounded-2xl"
                     >
                         {link.label}
                     </Link>

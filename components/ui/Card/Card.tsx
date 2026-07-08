@@ -4,11 +4,13 @@ import { CardProps } from "./card.types";
 
 export default function Card({
     children,
-    className
+    className,
+    ...props
 }: CardProps) {
     return (
         <div
-            className={`rounded-xl border p-4 shadow-sm ${className ?? ""}`}
+            className={`rounded-xl shadow-lg ${className ?? ""}`}
+            {...props}
         >
             {children}
         </div>

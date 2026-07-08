@@ -12,7 +12,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`px-4 py-2 rounded-lg 
+      className={`px-4 py-2 rounded-lg cursor-pointer
         ${buttonVariants[variant]}   
         ${buttonSize[size]}
         ${className ?? ""}

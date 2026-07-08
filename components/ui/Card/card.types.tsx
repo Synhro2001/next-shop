@@ -1,6 +1,8 @@
+import { HTMLAttributes } from "react";
 
-export type CardProps = {
-    children?: React.ReactNode;
-    className?: string;
 
-}
+export type CardProps = 
+    HTMLAttributes<HTMLDivElement> & {
+        children?: React.ReactNode;
+    }
+   
