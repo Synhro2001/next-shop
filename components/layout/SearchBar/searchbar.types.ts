@@ -16,7 +16,7 @@ export type SearchBarProps = {
 
     loading?: boolean;
 
-    disable?: boolean;
+    disabled?: boolean;
 
     className?: string
 }

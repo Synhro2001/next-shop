@@ -18,7 +18,7 @@ export default function Navbar({
         <nav className=" flex justify-between items-center">
             <Link href="/" className="text-xl text-black font-bold z-40">{title}</Link>
             <button 
-                className="relative z-50 md:hidden bg-"  
+                className="relative z-50 md:hidden"  
                 onClick={() => setOpen(!open)}
             >
                 {open ? <X size={28} color="black"/> : <Menu size={28} color="black"/>}

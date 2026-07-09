@@ -16,9 +16,9 @@ export type ButtonVariant =
 
 
 export const buttonSize = {
-  sm: "px-2 py-1 text-sm",
-  md: "px-4 py-2 text-base",
-  lg: "px-6 py-3 text-lg",
+  sm: "h-9 px-3 text-sm",
+  md: "h-11 px-4 text-base",
+  lg: "h-12 px-5 text-lg",
 } as const
 
 type ButtonSize = 
