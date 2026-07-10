@@ -17,9 +17,9 @@ export type BadgeVariant =
     keyof typeof badgeVariants;
 
 export const badgeSize = {
-    sm: "px-1.5 py-0.5 text-xs",
-    md: "px-2 py-1 text-base",
-    lg: "px-2.5 py-1.5 text-lg",
+    sm: "h-4 w-14 text-xs",
+    md: "h-6 w-20 text-sm",
+    lg: "h-8 w-20 ",
 } as const
 
 export type BadgeSize =

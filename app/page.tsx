@@ -1,7 +1,8 @@
 "use client";
 
 import CategorySlider, { categories } from "@/components/layout/CategorySlider";
-import ProductCard from "@/components/layout/Product/ProductCard";
+import { products } from "@/components/layout/Product/product.data";
+import ProductGrid from "@/components/layout/Product/ProductGrid";
 import SearchBar from "@/components/layout/SearchBar";
 import Link from "next/link";
 import { useState } from "react";
@@ -22,12 +23,7 @@ export default function Home() {
         </Link>
         <SearchBar value={search} onChange={setSearch}/>
         <CategorySlider categories={categories} />
-        <ProductCard
-          id="1"
-          title="330$"
-          image="/img/home.jpg"
-          description="Komunala"
-        />
+        <ProductGrid products={products}/>
       </div>
    
        {/* сюда делаем как в visam разные боксы с определенной информацией */}

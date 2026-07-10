@@ -8,12 +8,8 @@ export type CategorySliderProps = {
     categories: Category[]
 }
 
-export type CategoryItemProps = {
-    title: string;
-    image: string;
-
+export type CategoryItemProps = Category & {
     active?: boolean;
-
     onClick?: () => void
 
     // disabled?: boolean
