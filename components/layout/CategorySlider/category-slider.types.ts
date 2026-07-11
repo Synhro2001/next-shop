@@ -5,7 +5,9 @@ export type Category = {
 }
 
 export type CategorySliderProps = {
-    categories: Category[]
+    categories: Category[];
+    selectedCategory: string;
+    onChangeCategory: (value: string) => void; 
 }
 
 export type CategoryItemProps = Category & {

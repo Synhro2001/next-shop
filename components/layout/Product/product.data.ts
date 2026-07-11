@@ -9,7 +9,7 @@ export const products: Product[] = [
     price: 330000,
     rating: 4.9,
     reviews: 124,
-    category: "Home",
+    categoryId: "home",
   },
   {
     id: "2",
@@ -19,7 +19,7 @@ export const products: Product[] = [
     price: 580000,
     rating: 4.8,
     reviews: 82,
-    category: "Beach",
+    categoryId: "beach",
   },
   {
     id: "3",
@@ -29,7 +29,7 @@ export const products: Product[] = [
     price: 72000,
     rating: 4.9,
     reviews: 46,
-    category: "Car",
+    categoryId: "car",
   },
   {
     id: "4",
@@ -39,7 +39,7 @@ export const products: Product[] = [
     price: 18,
     rating: 4.7,
     reviews: 260,
-    category: "Food",
+    categoryId: "food",
   },
   {
     id: "5",
@@ -49,7 +49,7 @@ export const products: Product[] = [
     price: 210000,
     rating: 4.6,
     reviews: 39,
-    category: "Home",
+    categoryId: "home",
   },
   {
     id: "6",
@@ -59,6 +59,6 @@ export const products: Product[] = [
     price: 290000,
     rating: 4.8,
     reviews: 67,
-    category: "Beach",
+    categoryId: "beach",
   },
 ];

@@ -10,7 +10,7 @@ export type Product = {
     price?: number;
     rating?: number;
     reviews?: number;
-    category?: string;
+    categoryId: string;
     
     productBadge?: ProductBadge
    

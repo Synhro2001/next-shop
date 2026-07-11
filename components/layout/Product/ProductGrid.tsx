@@ -19,7 +19,7 @@ export default function ProductGrid ({
                     />
                 ))
             ) : (
-                <p>Product not Found</p>
+                <p className="text-center font-bold">Product not Found</p>
             )}
         </div>
     )
