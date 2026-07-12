@@ -1,5 +1,6 @@
 "use client"
 
+import EmptyState from "@/components/ui/EmptyState";
 import { ProductGridProps } from "./product.types";
 import ProductCard from "./ProductCard";
 
@@ -19,7 +20,10 @@ export default function ProductGrid ({
                     />
                 ))
             ) : (
-                <p className="text-center font-bold">Product not Found</p>
+                <EmptyState
+                    title="Nothing found"
+                    description="Try another category or change your search query."
+                />
             )}
         </div>
     )

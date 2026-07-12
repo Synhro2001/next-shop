@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --swiper-theme-color: #ffffff;
 }
 
 @theme inline {
@@ -20,6 +21,23 @@
   /* --color-surface: #FFFFFF;
   --color-border: #E2E8F0; */
 }
+
+/* Swiper styles*/
+.swiper-pagination {
+    bottom: 32px !important;
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: white !important;
+  opacity: 1;
+}
+
+
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;

@@ -4,13 +4,19 @@ export type ProductProps = Product;
 export type Product = {
     id: string;
     title: string;
-    image: string;
+    
+    images: string[];
 
     description?: string; 
     price?: number;
+
     rating?: number;
     reviews?: number;
+
     categoryId: string;
+
+    location?: string;
+    postedAt?: string;
     
     productBadge?: ProductBadge
    

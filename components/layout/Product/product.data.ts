@@ -4,7 +4,7 @@ export const products: Product[] = [
   {
     id: "1",
     title: "Modern House",
-    image: "/img/home.jpg",
+    images: ["/img/home.jpg", "/img/home2.jpg", "/img/home3.jpg"],
     description: "Beautiful family house with a large garden.",
     price: 330000,
     rating: 4.9,
@@ -14,7 +14,7 @@ export const products: Product[] = [
   {
     id: "2",
     title: "Beach Villa",
-    image: "/img/beach.jpg",
+    images: ["/img/beach.jpg"],
     description: "Luxury villa near the sea.",
     price: 580000,
     rating: 4.8,
@@ -24,7 +24,7 @@ export const products: Product[] = [
   {
     id: "3",
     title: "BMW M4",
-    image: "/img/car.jpg",
+    images: ["/img/car.jpg"],
     description: "Sport coupe with premium interior.",
     price: 72000,
     rating: 4.9,
@@ -34,7 +34,7 @@ export const products: Product[] = [
   {
     id: "4",
     title: "Italian Pizza",
-    image: "/img/food.jpg",
+    images: ["/img/food.jpg"],
     description: "Traditional pizza with mozzarella.",
     price: 18,
     rating: 4.7,
@@ -44,7 +44,7 @@ export const products: Product[] = [
   {
     id: "5",
     title: "Mountain Cabin",
-    image: "/img/home.jpg",
+    images: ["/img/home.jpg", "/img/home2.jpg", "/img/home3.jpg"],
     description: "Cozy cabin surrounded by nature.",
     price: 210000,
     rating: 4.6,
@@ -54,7 +54,7 @@ export const products: Product[] = [
   {
     id: "6",
     title: "Ocean Apartment",
-    image: "/img/beach.jpg",
+    images: ["/img/beach.jpg"],
     description: "Apartment with an ocean view.",
     price: 290000,
     rating: 4.8,

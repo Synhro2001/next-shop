@@ -28,7 +28,8 @@ export default function Home() {
     );
 
   const filteredProducts = categoryProducts.filter(
-    (product) => product.title.toLowerCase().includes(debouncedSearch.toLowerCase())
+    (product) => product.title.toLowerCase().includes(debouncedSearch.toLowerCase()) 
+    || product?.description?.toLowerCase().includes(debouncedSearch.toLowerCase())  
   )
 
 

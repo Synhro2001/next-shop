@@ -9,7 +9,6 @@ export default function CategorySlider({
     onChangeCategory
 }: CategorySliderProps) {
 
-
     return ( 
         <div className="-mx-4">
             <div className=" overflow-x-auto no-scrollbar snap-x snap-mandatory ">
