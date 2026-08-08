@@ -5,7 +5,7 @@ export const categories = [
     image: "/img/all.jpg",
   },
   {
-    id: "home",
+    id: "homes",
     title: "Home",
     image: "/img/home.jpg",
   },
@@ -20,7 +20,7 @@ export const categories = [
     image: "/img/food.jpg",
   },
   {
-    id: "car",
+    id: "cars",
     title: "Car",
     image: "/img/car.jpg",
   },

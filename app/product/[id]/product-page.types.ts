@@ -1,4 +1,4 @@
-import { Product } from "@/components/layout/Product/product.types";
+import { Product } from "@/types/products/product.types";
 
 export type ProductGalleryProps = {
     product: Product;

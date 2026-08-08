@@ -1,11 +1,11 @@
 "use client"
 
 import Card from "@/components/ui/Card";
-import { ProductProps } from "./product.types";
 import Image from 'next/image'
 import Badge from "@/components/ui/Badge";
 import { Star } from "lucide-react";
 import Link from "next/link";
+import { ProductProps } from "@/types/products/product.types";
 
 
 export default function ProductCard({
