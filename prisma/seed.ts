@@ -28,26 +28,38 @@ async function main() {
     {
       id: "cars",
       name: "Cars",
+      image: "/img/car.jpg",
+
     },
     {
       id: "homes",
       name: "Homes",
+      image: "/img/home.jpg",
+
     },
     {
       id: "beach",
       name: "Beach",
+      image: "/img/beach.jpg",
+
     },
     {
       id: "food",
       name: "Food",
+      image: "/img/food.jpg",
+
     },
     {
       id: "electronics",
       name: "Electronics",
+      image: "",
+
     },
     {
       id: "fashion",
       name: "Fashion",
+      image: "",
+
     },
   ];
 

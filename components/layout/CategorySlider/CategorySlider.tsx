@@ -15,7 +15,7 @@ export default function CategorySlider({
                 <div className="flex gap-4 py-6 px-4">
                     {categories.map((category) => (
                         <div key={category.id} className="shrink-0 snap-start">
-                            <CategoryItem id={category.id} title={category.title} image={category.image} active={category.id === selectedCategory} onClick={() => onChangeCategory(category.id)}/>
+                            <CategoryItem id={category.id} name={category.name} image={category.image} active={category.id === selectedCategory} onClick={() => onChangeCategory(category.id)}/>
                         </div>
                     ))}
         

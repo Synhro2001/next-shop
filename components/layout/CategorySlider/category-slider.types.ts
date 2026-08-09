@@ -1,8 +1,8 @@
 export type Category = {
-    id: string;
-    title: string;
-    image: string;
-}
+  id: string;
+  name: string;
+  image: string;
+};
 
 export type CategorySliderProps = {
     categories: Category[];

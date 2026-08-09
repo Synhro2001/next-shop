@@ -5,7 +5,7 @@ import { CategoryItemProps } from "./category-slider.types";
 import Image from 'next/image'
 
 export default function CategoryItem ({
-    title,
+    name,
     image,
     active,
     onClick
@@ -25,11 +25,11 @@ export default function CategoryItem ({
                     src={image}
                     fill
                     className="object-cover"
-                    alt={title}
+                    alt={name}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
             </div>
-            <p className="text-center font-semibold">{title}</p>
+            <p className="text-center font-semibold">{name}</p>
         </Card>
            
         

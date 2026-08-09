@@ -1,7 +1,7 @@
 "use client";
 // I can use -useState -useEffect because it is not Server Component
 
-import CategorySlider, { categories } from "@/components/layout/CategorySlider";
+import CategorySlider, {Category } from "@/components/layout/CategorySlider";
 import ProductGrid from "@/components/layout/Product/ProductGrid";
 import SearchBar from "@/components/layout/SearchBar";
 import useDebounce from "@/components/layout/SearchBar/search.utils";
@@ -12,9 +12,10 @@ import type { Product } from "@/types/products/product.types";
 
 type HomeClientProps = {
   products: Product[];
+  categories: Category[];
 };
 
-export default function HomeClient({products}: HomeClientProps) {  
+export default function HomeClient({products, categories}: HomeClientProps) {  
   const [search, setSearch] = useState<string>("")
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
   const debouncedSearch = useDebounce(search, 500)

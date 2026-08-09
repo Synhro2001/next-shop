@@ -45,6 +45,7 @@ model Seller {
 model Category {
   id String @id
   name String
+  image String
 
   products Product[]
 }
