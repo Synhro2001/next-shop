@@ -7,7 +7,7 @@ export default async function HomePage() {
     getProducts(),
     getCategories(),
   ]);
-  console.log("Categories", categories)
+  console.log("Products", products)
   return (
     <HomeClient 
       products={products}

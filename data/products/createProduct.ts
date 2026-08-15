@@ -6,8 +6,8 @@ export function createProduct(
 ): Product {
 
     return {
-
-        ...props
-    };
+    ...props,
+   
+};
 
 }

@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import type { Product } from "@/types/products/product.types";
+import ProductGoogleMap from "../layout/ProductGoogleMap/ProductGoogleMap";
 
 type HomeClientProps = {
   products: Product[];
@@ -46,6 +47,7 @@ export default function HomeClient({products, categories}: HomeClientProps) {
         <Link href="/ui">
           Open UI Showcase
         </Link>
+        
         <SearchBar value={search} onChange={setSearch}/> 
         <CategorySlider categories={categories}  selectedCategory={selectedCategory} onChangeCategory={setSelectedCategory}/>
         <ProductGrid products={filteredProducts}/>

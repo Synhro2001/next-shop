@@ -26,6 +26,7 @@ export default function ProductCard({
                         src={images[0]}
                         fill
                         alt={title}
+                        className="object-cover"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     <Badge variant="default" size="sm" className="absolute">Popular</Badge>

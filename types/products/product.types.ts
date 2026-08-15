@@ -14,6 +14,9 @@ export type Product = {
 
     location?: string;
 
+    latitude?: number;
+    longitude?: number
+
     createdAt?: string;
     seller: Seller;
 

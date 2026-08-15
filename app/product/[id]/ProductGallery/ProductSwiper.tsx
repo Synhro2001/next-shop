@@ -28,8 +28,8 @@ export default function ProductSwiper({
                       <Image
                         src={image}
                         alt={title}
-                        className="object-cover"
                         fill
+                        className="object-cover"
                         priority={index === 0}
                     />
 

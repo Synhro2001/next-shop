@@ -26,40 +26,39 @@ async function main() {
 
   const categories = [
     {
+      id: "all",
+      name: "All",
+      image: "/img/all.jpg",
+    },
+    {
       id: "cars",
       name: "Cars",
       image: "/img/car.jpg",
-
     },
     {
       id: "homes",
       name: "Homes",
       image: "/img/home.jpg",
-
     },
     {
       id: "beach",
       name: "Beach",
       image: "/img/beach.jpg",
-
     },
     {
       id: "food",
       name: "Food",
       image: "/img/food.jpg",
-
     },
     {
       id: "electronics",
       name: "Electronics",
-      image: "",
-
+      image: "/img/electronic.jpg",
     },
     {
       id: "fashion",
       name: "Fashion",
-      image: "",
-
+      image: "/img/fashion.jpg",
     },
   ];
 
@@ -123,7 +122,10 @@ async function main() {
   // --------------------------------------------------
 
   const products = [
+    // --------------------------------------------------
     // CARS
+    // --------------------------------------------------
+
     {
       id: "product-01",
       title: "BMW M4",
@@ -132,6 +134,8 @@ async function main() {
       rating: 5,
       reviews: 120,
       location: "Germany",
+      latitude: 52.5200,
+      longitude: 13.4050,
       categoryId: "cars",
       sellerId: "seller-bmw",
       images: ["/img/car.jpg"],
@@ -146,6 +150,8 @@ async function main() {
       rating: 4.9,
       reviews: 94,
       location: "Munich",
+      latitude: 48.1351,
+      longitude: 11.5820,
       categoryId: "cars",
       sellerId: "seller-bmw",
       images: ["/img/car.jpg"],
@@ -160,6 +166,8 @@ async function main() {
       rating: 4.8,
       reviews: 83,
       location: "Berlin",
+      latitude: 52.5200,
+      longitude: 13.4050,
       categoryId: "cars",
       sellerId: "seller-bmw",
       images: ["/img/car.jpg"],
@@ -173,6 +181,8 @@ async function main() {
       rating: 4.9,
       reviews: 76,
       location: "Germany",
+      latitude: 48.7758,
+      longitude: 9.1829,
       categoryId: "cars",
       sellerId: "seller-audi",
       images: ["/img/car.jpg"],
@@ -187,6 +197,8 @@ async function main() {
       rating: 4.7,
       reviews: 61,
       location: "Berlin",
+      latitude: 52.5200,
+      longitude: 13.4050,
       categoryId: "cars",
       sellerId: "seller-audi",
       images: ["/img/car.jpg"],
@@ -200,6 +212,8 @@ async function main() {
       rating: 4.8,
       reviews: 71,
       location: "Hamburg",
+      latitude: 53.5511,
+      longitude: 9.9937,
       categoryId: "cars",
       sellerId: "seller-audi",
       images: ["/img/car.jpg"],
@@ -214,6 +228,8 @@ async function main() {
       rating: 4.8,
       reviews: 88,
       location: "Stuttgart",
+      latitude: 48.7758,
+      longitude: 9.1829,
       categoryId: "cars",
       sellerId: "seller-mercedes",
       images: ["/img/car.jpg"],
@@ -227,13 +243,18 @@ async function main() {
       rating: 4.9,
       reviews: 103,
       location: "Stuttgart",
+      latitude: 48.7758,
+      longitude: 9.1829,
       categoryId: "cars",
       sellerId: "seller-mercedes",
       images: ["/img/car.jpg"],
       badge: ProductBadge.popular,
     },
 
+    // --------------------------------------------------
     // HOMES
+    // --------------------------------------------------
+
     {
       id: "product-09",
       title: "Modern House",
@@ -242,6 +263,8 @@ async function main() {
       rating: 4.9,
       reviews: 124,
       location: "Berlin",
+      latitude: 52.5200,
+      longitude: 13.4050,
       categoryId: "homes",
       sellerId: "seller-home",
       images: ["/img/home.jpg", "/img/home2.jpg", "/img/home3.jpg"],
@@ -256,6 +279,8 @@ async function main() {
       rating: 4.6,
       reviews: 39,
       location: "Alps",
+      latitude: 46.8182,
+      longitude: 8.2275,
       categoryId: "homes",
       sellerId: "seller-home",
       images: ["/img/home.jpg", "/img/home2.jpg"],
@@ -269,6 +294,8 @@ async function main() {
       rating: 4.8,
       reviews: 82,
       location: "Munich",
+      latitude: 48.1351,
+      longitude: 11.5820,
       categoryId: "homes",
       sellerId: "seller-home",
       images: ["/img/home.jpg", "/img/home2.jpg"],
@@ -283,6 +310,8 @@ async function main() {
       rating: 4.9,
       reviews: 146,
       location: "Frankfurt",
+      latitude: 50.1109,
+      longitude: 8.6821,
       categoryId: "homes",
       sellerId: "seller-home",
       images: ["/img/home.jpg", "/img/home2.jpg", "/img/home3.jpg"],
@@ -296,6 +325,8 @@ async function main() {
       rating: 4.7,
       reviews: 54,
       location: "Hamburg",
+      latitude: 53.5511,
+      longitude: 9.9937,
       categoryId: "homes",
       sellerId: "seller-home",
       images: ["/img/home.jpg"],
@@ -309,12 +340,17 @@ async function main() {
       rating: 4.8,
       reviews: 67,
       location: "Bavaria",
+      latitude: 48.7904,
+      longitude: 11.4979,
       categoryId: "homes",
       sellerId: "seller-home",
       images: ["/img/home.jpg", "/img/home3.jpg"],
     },
 
+    // --------------------------------------------------
     // BEACH
+    // --------------------------------------------------
+
     {
       id: "product-15",
       title: "Beach Villa",
@@ -323,6 +359,8 @@ async function main() {
       rating: 4.8,
       reviews: 82,
       location: "Spain",
+      latitude: 40.4637,
+      longitude: -3.7492,
       categoryId: "beach",
       sellerId: "seller-ocean",
       images: ["/img/beach.jpg"],
@@ -337,6 +375,8 @@ async function main() {
       rating: 4.8,
       reviews: 67,
       location: "Portugal",
+      latitude: 39.3999,
+      longitude: -8.2245,
       categoryId: "beach",
       sellerId: "seller-ocean",
       images: ["/img/beach.jpg"],
@@ -350,6 +390,8 @@ async function main() {
       rating: 4.9,
       reviews: 91,
       location: "Italy",
+      latitude: 41.8719,
+      longitude: 12.5674,
       categoryId: "beach",
       sellerId: "seller-ocean",
       images: ["/img/beach.jpg"],
@@ -364,6 +406,8 @@ async function main() {
       rating: 4.7,
       reviews: 58,
       location: "Greece",
+      latitude: 39.0742,
+      longitude: 21.8243,
       categoryId: "beach",
       sellerId: "seller-ocean",
       images: ["/img/beach.jpg"],
@@ -377,13 +421,18 @@ async function main() {
       rating: 5,
       reviews: 112,
       location: "France",
+      latitude: 46.2276,
+      longitude: 2.2137,
       categoryId: "beach",
       sellerId: "seller-ocean",
       images: ["/img/beach.jpg"],
       badge: ProductBadge.popular,
     },
 
+    // --------------------------------------------------
     // FOOD
+    // --------------------------------------------------
+
     {
       id: "product-20",
       title: "Italian Pizza",
@@ -392,6 +441,8 @@ async function main() {
       rating: 4.7,
       reviews: 260,
       location: "Rome",
+      latitude: 41.9028,
+      longitude: 12.4964,
       categoryId: "food",
       sellerId: "seller-food",
       images: ["/img/food.jpg"],
@@ -406,6 +457,8 @@ async function main() {
       rating: 4.8,
       reviews: 310,
       location: "Naples",
+      latitude: 40.8518,
+      longitude: 14.2681,
       categoryId: "food",
       sellerId: "seller-food",
       images: ["/img/food.jpg"],
@@ -419,6 +472,8 @@ async function main() {
       rating: 4.9,
       reviews: 188,
       location: "Rome",
+      latitude: 41.9028,
+      longitude: 12.4964,
       categoryId: "food",
       sellerId: "seller-food",
       images: ["/img/food.jpg"],
@@ -432,6 +487,8 @@ async function main() {
       rating: 4.9,
       reviews: 94,
       location: "Milan",
+      latitude: 45.4642,
+      longitude: 9.1900,
       categoryId: "food",
       sellerId: "seller-food",
       images: ["/img/food.jpg"],
@@ -446,12 +503,17 @@ async function main() {
       rating: 4.6,
       reviews: 240,
       location: "Berlin",
+      latitude: 52.5200,
+      longitude: 13.4050,
       categoryId: "food",
       sellerId: "seller-food",
       images: ["/img/food.jpg"],
     },
 
+    // --------------------------------------------------
     // ELECTRONICS
+    // --------------------------------------------------
+
     {
       id: "product-25",
       title: "MacBook Pro",
@@ -460,9 +522,11 @@ async function main() {
       rating: 4.9,
       reviews: 340,
       location: "Berlin",
+      latitude: 52.5200,
+      longitude: 13.4050,
       categoryId: "electronics",
       sellerId: "seller-tech",
-      images: ["/img/home.jpg"],
+      images: ["/img/macbookPro.jpg"],
       badge: ProductBadge.popular,
     },
 
@@ -474,9 +538,11 @@ async function main() {
       rating: 4.8,
       reviews: 520,
       location: "Munich",
+      latitude: 48.1351,
+      longitude: 11.5820,
       categoryId: "electronics",
       sellerId: "seller-tech",
-      images: ["/img/home.jpg"],
+      images: ["/img/iphonePro.jpg"],
       badge: ProductBadge.new,
     },
 
@@ -488,9 +554,11 @@ async function main() {
       rating: 4.8,
       reviews: 274,
       location: "Hamburg",
+      latitude: 53.5511,
+      longitude: 9.9937,
       categoryId: "electronics",
       sellerId: "seller-tech",
-      images: ["/img/home.jpg"],
+      images: ["/img/ipadPro.jpg"],
     },
 
     {
@@ -501,9 +569,11 @@ async function main() {
       rating: 4.9,
       reviews: 188,
       location: "Berlin",
+      latitude: 52.5200,
+      longitude: 13.4050,
       categoryId: "electronics",
       sellerId: "seller-tech",
-      images: ["/img/home.jpg"],
+      images: ["/img/sonyCamera.jpg"],
     },
 
     {
@@ -514,9 +584,11 @@ async function main() {
       rating: 4.7,
       reviews: 143,
       location: "Frankfurt",
+      latitude: 50.1109,
+      longitude: 8.6821,
       categoryId: "electronics",
       sellerId: "seller-tech",
-      images: ["/img/home.jpg"],
+      images: ["/img/gamingLaptop.jpg"],
       badge: ProductBadge.popular,
     },
 
@@ -528,12 +600,17 @@ async function main() {
       rating: 4.6,
       reviews: 412,
       location: "Berlin",
+      latitude: 52.5200,
+      longitude: 13.4050,
       categoryId: "electronics",
       sellerId: "seller-tech",
-      images: ["/img/home.jpg"],
+      images: ["/img/wirelessHeadphones.jpg"],
     },
 
+    // --------------------------------------------------
     // FASHION
+    // --------------------------------------------------
+
     {
       id: "product-31",
       title: "Classic Jacket",
@@ -542,6 +619,8 @@ async function main() {
       rating: 4.7,
       reviews: 78,
       location: "Milan",
+      latitude: 45.4642,
+      longitude: 9.1900,
       categoryId: "fashion",
       sellerId: "seller-fashion",
       images: ["/img/home.jpg"],
@@ -555,6 +634,8 @@ async function main() {
       rating: 4.8,
       reviews: 154,
       location: "Paris",
+      latitude: 48.8566,
+      longitude: 2.3522,
       categoryId: "fashion",
       sellerId: "seller-fashion",
       images: ["/img/home.jpg"],
@@ -569,6 +650,8 @@ async function main() {
       rating: 4.6,
       reviews: 91,
       location: "Paris",
+      latitude: 48.8566,
+      longitude: 2.3522,
       categoryId: "fashion",
       sellerId: "seller-fashion",
       images: ["/img/home.jpg"],
@@ -583,6 +666,8 @@ async function main() {
       rating: 4.9,
       reviews: 116,
       location: "Geneva",
+      latitude: 46.2044,
+      longitude: 6.1432,
       categoryId: "fashion",
       sellerId: "seller-fashion",
       images: ["/img/home.jpg"],
@@ -597,12 +682,17 @@ async function main() {
       rating: 4.7,
       reviews: 64,
       location: "Berlin",
+      latitude: 52.5200,
+      longitude: 13.4050,
       categoryId: "fashion",
       sellerId: "seller-fashion",
       images: ["/img/home.jpg"],
     },
 
+    // --------------------------------------------------
     // EXTRA PRODUCTS
+    // --------------------------------------------------
+
     {
       id: "product-36",
       title: "Tesla Model 3",
@@ -611,6 +701,8 @@ async function main() {
       rating: 4.8,
       reviews: 132,
       location: "Berlin",
+      latitude: 52.5200,
+      longitude: 13.4050,
       categoryId: "cars",
       sellerId: "seller-bmw",
       images: ["/img/car.jpg"],
@@ -625,6 +717,8 @@ async function main() {
       rating: 4.8,
       reviews: 142,
       location: "Munich",
+      latitude: 48.1351,
+      longitude: 11.5820,
       categoryId: "cars",
       sellerId: "seller-bmw",
       images: ["/img/car.jpg"],
@@ -638,6 +732,8 @@ async function main() {
       rating: 5,
       reviews: 74,
       location: "Munich",
+      latitude: 48.1351,
+      longitude: 11.5820,
       categoryId: "homes",
       sellerId: "seller-home",
       images: ["/img/home.jpg", "/img/home2.jpg"],
@@ -652,6 +748,8 @@ async function main() {
       rating: 4.9,
       reviews: 89,
       location: "Spain",
+      latitude: 40.4637,
+      longitude: -3.7492,
       categoryId: "beach",
       sellerId: "seller-ocean",
       images: ["/img/beach.jpg"],
@@ -666,9 +764,11 @@ async function main() {
       rating: 4.7,
       reviews: 321,
       location: "Berlin",
+      latitude: 52.5200,
+      longitude: 13.4050,
       categoryId: "electronics",
       sellerId: "seller-tech",
-      images: ["/img/home.jpg"],
+      images: ["/img/smartWatch.jpg"],
     },
   ];
 

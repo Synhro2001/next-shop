@@ -6,44 +6,63 @@ import { NavbarProps } from "./navbar.types";
 import Link from "next/link";
 
 export default function Navbar({
-    title,
-    // bgColor,
-    // textColor,
-    links = []
+  title,
+  links = [],
 }: NavbarProps) {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    return (
-    <div className="p-4 bg-primary ">
-        <nav className=" flex justify-between items-center">
-            <Link href="/" className="text-xl text-black font-bold z-40">{title}</Link>
-            <button 
-                className="relative z-50 md:hidden"  
-                onClick={() => setOpen(!open)}
-            >
-                {open ? <X size={28} color="black"/> : <Menu size={28} color="black"/>}
-            </button>
-        </nav>
-        <div className={`
-                fixed inset-0 bg-white z-40 
-                transform transition-transform duration-300 ease-in-out
-                ${open ? "translate-x-0" : "-translate-x-full"}
-            `}
+  return (
+    <div className="p-4 bg-primary">
+      <nav className="flex justify-between items-center">
+    
+        <Link
+          href="/"
+          className="text-xl text-white font-bold z-50"
         >
-            <nav className="mt-20 flex flex-col gap-3 px-4">
-                {links.map((link) => (
-                    <Link
-                        key={link.href}
-                        href={link.href}
-                        onClick={() =>  setOpen(false)}
-                        className="p-4 bg-primary rounded-2xl"
-                    >
-                        {link.label}
-                    </Link>
-                ))}
-            </nav>
-        </div>
+          {title}
+        </Link>
+
+        <button
+          className="relative z-50 md:hidden text-white"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Close menu" : "Open menu"}
+        >
+          {open ? (
+            <X size={28} />
+          ) : (
+            <Menu size={28} />
+          )}
+        </button>
+      </nav>
+
+      <div
+        className={`
+          fixed inset-0 bg-surface z-40
+          transform transition-transform duration-300 ease-in-out
+          ${open ? "translate-x-0" : "-translate-x-full"}
+        `}
+      >
+        <nav className="mt-20 flex flex-col gap-3 px-4">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="
+                p-4
+                bg-primary
+                text-white
+                font-semibold
+                rounded-2xl
+                transition-opacity
+                hover:opacity-90
+              "
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </div>
-     
-    );
+  );
 }

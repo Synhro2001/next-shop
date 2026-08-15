@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^2.1.1",
     "@prisma/adapter-pg": "^7.9.1",
     "@prisma/client": "^7.9.1",
     "lucide-react": "^1.16.0",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/google.maps": "^3.65.5",
     "@types/node": "^20",
     "@types/pg": "^8.21.0",
     "@types/react": "^19",

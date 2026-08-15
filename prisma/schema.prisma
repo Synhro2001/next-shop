@@ -12,28 +12,6 @@ datasource db {
   provider = "postgresql"
 }
 
-model Product { 
-  id String @id @default(cuid())
-  title String
-  description String?
-  price Int
-  rating Float?
-  reviews Int? 
-  location String?
- 
-  badge ProductBadge?
-
-  categoryId String
-  category Category @relation(fields: [categoryId], references: [id])
-
-  sellerId String
-  seller Seller @relation(fields: [sellerId], references: [id])
-
-  createdAt DateTime @default(now())
-
-  images String[]
-}
-
 model Seller {
   id String @id
   name String
@@ -54,3 +32,29 @@ enum ProductBadge {
   popular
   new
 }
+
+model Product { 
+  id String @id @default(cuid())
+  title String
+  description String?
+  price Int
+  rating Float?
+  reviews Int? 
+  location String?
+
+  latitude Float?
+  longitude Float?
+ 
+  badge ProductBadge?
+
+  categoryId String
+  category Category @relation(fields: [categoryId], references: [id])
+
+  sellerId String
+  seller Seller @relation(fields: [sellerId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  images String[]
+}
+

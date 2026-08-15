@@ -2,24 +2,6 @@
 CREATE TYPE "ProductBadge" AS ENUM ('popular', 'new');
 
 -- CreateTable
-CREATE TABLE "Product" (
-    "id" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
-    "description" TEXT,
-    "price" INTEGER NOT NULL,
-    "rating" DOUBLE PRECISION,
-    "reviews" INTEGER,
-    "location" TEXT,
-    "badge" "ProductBadge",
-    "categoryId" TEXT NOT NULL,
-    "sellerId" TEXT NOT NULL,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "images" TEXT[],
-
-    CONSTRAINT "Product_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
 CREATE TABLE "Seller" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
@@ -35,6 +17,26 @@ CREATE TABLE "Category" (
     "image" TEXT NOT NULL,
 
     CONSTRAINT "Category_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Product" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "description" TEXT,
+    "price" INTEGER NOT NULL,
+    "rating" DOUBLE PRECISION,
+    "reviews" INTEGER,
+    "location" TEXT,
+    "latitude" DOUBLE PRECISION,
+    "longitude" DOUBLE PRECISION,
+    "badge" "ProductBadge",
+    "categoryId" TEXT NOT NULL,
+    "sellerId" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "images" TEXT[],
+
+    CONSTRAINT "Product_pkey" PRIMARY KEY ("id")
 );
 
 -- AddForeignKey

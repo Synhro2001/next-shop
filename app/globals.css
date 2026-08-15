@@ -1,9 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --swiper-theme-color: #ffffff;
+  --background: #F7F7F7;
+  --foreground: #111111;
+
+  /* Text */
+  --text-primary: #111111;
+  --text-secondary: #4B4B4B;
+  --text-muted: #777777;
+  --text-disabled: #A3A3A3;
+
+  /* UI */
+  --primary: #111111;
+  --surface: #FFFFFF;
+  --border: #E5E5E5;
+
+  /* Accent */
+  --accent: #2563EB;
+  --rating: #EAB308;
 }
 
 @theme inline {
@@ -14,17 +28,17 @@
 }
 
 @theme {
-  --color-primary: #9D6381;
-  --color-secondary: #FDECEF;
-  --color-accent: #0F110C;
+  --color-primary: #111111;
+  --color-secondary: #F1F1F1;
+  --color-accent: #000000;
 
-  /* --color-surface: #FFFFFF;
-  --color-border: #E2E8F0; */
+  --color-surface: #FFFFFF;
+  --color-border: #E5E5E5;
 }
 
-/* Swiper styles*/
+/* Swiper styles */
 .swiper-pagination {
-    bottom: 32px !important;
+  bottom: 32px !important;
 }
 
 .swiper-pagination-bullet {
@@ -37,15 +51,13 @@
   opacity: 1;
 }
 
-
-
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
 .no-scrollbar {
-  -ms-overflow-style: none; /* IE и старый Edge */
-  scrollbar-width: none;    /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body {

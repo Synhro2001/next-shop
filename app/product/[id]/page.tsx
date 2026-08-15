@@ -4,6 +4,7 @@ import ProductGallery from "./ProductGallery/ProductGallery"
 import ProductInfo from "./ProductInfo"
 import RelatedProducts from "./RelatedProducts/RelatedProducts"
 import { getProducts } from "@/lib/products/getProducts"
+import ProductGoogleMap from "@/components/layout/ProductGoogleMap/ProductGoogleMap"
 
 export default async  function ProductPage({
     params,
@@ -36,6 +37,13 @@ export default async  function ProductPage({
                     
                     <div className="">
                         <ProductInfo product={currentProduct}/>
+                    </div>
+
+                    <div className="mt-4">
+                        <ProductGoogleMap
+                            latitude={currentProduct.latitude}
+                            longitude={currentProduct.longitude}
+                        />
                     </div>
                     <div>
                         <RelatedProducts relatedProducts={relatedProducts}/>

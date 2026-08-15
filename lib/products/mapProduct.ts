@@ -8,6 +8,10 @@ type PrismaProduct = {
     rating: number | null;
     reviews: number | null;
     location: string | null;
+
+    latitude: number | null;
+    longitude: number | null;
+
     badge: "popular" | "new" | null;
     categoryId: string;
     createdAt: Date;
@@ -37,6 +41,9 @@ export function mapProduct(product: PrismaProduct): Product {
         categoryId: product.categoryId,
 
         location: product.location ?? undefined,
+
+        latitude: product.latitude ?? undefined,
+        longitude: product.longitude ?? undefined,
 
         createdAt: product.createdAt.toISOString(),
 
