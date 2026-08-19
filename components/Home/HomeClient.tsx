@@ -9,7 +9,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import type { Product } from "@/types/products/product.types";
-import ProductGoogleMap from "../layout/ProductGoogleMap/ProductGoogleMap";
 
 type HomeClientProps = {
   products: Product[];

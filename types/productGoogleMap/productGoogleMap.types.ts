@@ -1,6 +1,6 @@
 import { Product } from "../products/product.types";
 
-export type GoogleMapProduct = Product & {
+export type GoogleMapProduct = {
   latitude: number;
   longitude: number;
 };

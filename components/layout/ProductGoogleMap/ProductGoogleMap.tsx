@@ -20,10 +20,10 @@ export default function ProductGoogleMap({
             });
 
             const { Map } =
-                await importLibrary("maps") as google.maps.MapsLibrary;
+                await importLibrary("maps")
 
             const { AdvancedMarkerElement } =
-                await importLibrary("marker") as google.maps.MarkerLibrary;
+                await importLibrary("marker")
 
             const position = {
                 lat: latitude,
@@ -51,7 +51,7 @@ export default function ProductGoogleMap({
     return (
         <div
             ref={mapRef}
-            className="w-full h-[300px] rounded-xl overflow-hidden"
+            className="w-full h-75 rounded-xl overflow-hidden"
         />
     );
 }

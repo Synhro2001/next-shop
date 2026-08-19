@@ -3,30 +3,29 @@ import EmptyState from "@/components/ui/EmptyState"
 import ProductGallery from "./ProductGallery/ProductGallery"
 import ProductInfo from "./ProductInfo"
 import RelatedProducts from "./RelatedProducts/RelatedProducts"
-import { getProducts } from "@/lib/products/getProducts"
 import ProductGoogleMap from "@/components/layout/ProductGoogleMap/ProductGoogleMap"
+import { getProductById } from "@/lib/products/getProductById"
+import { getRelatedProducts } from "@/lib/products/getRelatedProducts"
 
 export default async  function ProductPage({
     params,
 }: {params: Promise<{id: string}>}) {
-    const products = await getProducts();
     const {id} = await params
     
-    const currentProduct = products.find((product) =>
-        product.id === id 
-    )
-    
+    const currentProduct = await getProductById(id)
 
     if (!currentProduct) {
         return <EmptyState title="Not found"/>
     }
 
-    const relatedProducts = products.filter((product) => {
-        return (
-            product.categoryId === currentProduct.categoryId &&
-            product.id !== currentProduct.id
-        );
-    }).slice(0,3);
+    const relatedProducts = await getRelatedProducts(currentProduct.categoryId, currentProduct.id)
+
+    // const relatedProducts = products.filter((product) => {
+    //     return (
+    //         product.categoryId === currentProduct.categoryId &&
+    //         product.id !== currentProduct.id
+    //     );
+    // }).slice(0,3);
 
 
     return (
@@ -40,10 +39,16 @@ export default async  function ProductPage({
                     </div>
 
                     <div className="mt-4">
-                        <ProductGoogleMap
-                            latitude={currentProduct.latitude}
-                            longitude={currentProduct.longitude}
-                        />
+                        {
+                            currentProduct.latitude !== undefined &&
+                            currentProduct.longitude !== undefined && (
+                                <ProductGoogleMap
+                                    latitude={currentProduct.latitude}
+                                    longitude={currentProduct.longitude}
+                                />
+                            )
+                        }
+                      
                     </div>
                     <div>
                         <RelatedProducts relatedProducts={relatedProducts}/>
