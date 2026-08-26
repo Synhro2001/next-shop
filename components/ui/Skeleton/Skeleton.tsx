@@ -2,7 +2,6 @@
 
 import { SkeletonProps } from "./skeleton.types"
 
-
 export default function Skeleton ({
     className
 }: SkeletonProps) {

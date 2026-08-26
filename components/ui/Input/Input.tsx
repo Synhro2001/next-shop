@@ -1,43 +1,53 @@
-"use client"
+"use client";
 
 import { InputProps, inputSize, inputVariants } from "./input.types";
 
 export default function Input({
-    variant = "primary",
-    size = "md",
-    label,
-    error,
-    className,
-    ...props
+  variant = "primary",
+  size = "md",
+  label,
+  error,
+  className,
+  ...props
 }: InputProps) {
+  const inputId = props.id;
 
-  const inputId = props.id
-    return (
-      <div className="flex flex-col gap-1">
-        {label && (
-          <label htmlFor={inputId} className="text-sm">
-            {label}
-          </label>
-        )}
-        <input
+  return (
+    <div className="relative w-full">
+      <input
+        {...props}
         id={inputId}
-        className={`
-          rounded-lg outline-1 focus:outline-2
+        placeholder=""
+        className={`peer block  w-full appearance-none rounded-lg border bg-transparent px-3 py-3 text-sm text-heading
+          outline-none transition-colors duration-200 border-default-medium focus:border-brand focus:ring-0
+
           ${inputVariants[variant]}
           ${inputSize[size]}
-          ${error ? inputVariants.danger  : inputVariants[variant]}
+          ${error ? inputVariants.danger : ""}
           ${className ?? ""}
         `}
-        {...props}
       />
-      {/*On the future I can use a reusable modal window for error */}
+
+      {label && (
+        <label
+          htmlFor={inputId}
+          className=" pointer-events-none absolute left-3 top-1/2 z-10 origin-left
+            -translate-y-1/2 bg-background px-1 text-sm text-body transition-all duration-200
+
+            peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-0
+            peer-focus:-translate-y-1/2 peer-focus:scale-75 peer-focus:text-fg-brand peer-not-placeholder-shown:top-0
+            peer-not-placeholder-shown:-translate-y-1/2 peer-not-placeholder-shown:scale-75
+          "
+        >
+          {label}
+        </label>
+      )}
+
       {error && (
-        <p className="text-sm text-red-500">
+        <p className="mt-1 text-sm text-red-500">
           {error}
         </p>
       )}
-
-      </div>
-       
-    );
+    </div>
+  );
 }

@@ -1,5 +1,5 @@
 import { getProducts } from "@/lib/products/getProducts";
-import HomeClient from "@/components/Home/HomeClient";
+import HomeClient from "@/components/layout/Home/HomeClient";
 import { getCategories } from "@/lib/category/getCategories";
 
 export default async function HomePage() {
@@ -7,7 +7,6 @@ export default async function HomePage() {
     getProducts(),
     getCategories(),
   ]);
-  console.log("Products", products)
   return (
     <HomeClient 
       products={products}

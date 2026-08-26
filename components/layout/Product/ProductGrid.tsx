@@ -1,8 +1,8 @@
 "use client"
 
 import EmptyState from "@/components/ui/EmptyState";
-import { ProductGridProps } from "./product.types";
 import ProductCard from "./ProductCard";
+import { ProductGridProps } from "@/types/products/product.types";
 
 export default function ProductGrid ({
     products
