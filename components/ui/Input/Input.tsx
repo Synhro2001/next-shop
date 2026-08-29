@@ -19,7 +19,7 @@ export default function Input({
         id={inputId}
         placeholder=""
         className={`peer block  w-full appearance-none rounded-lg border bg-transparent px-3 py-3 text-sm text-heading
-          outline-none transition-colors duration-200 border-default-medium focus:border-brand focus:ring-0
+          outline-none transition-colors duration-200 border-default-medium focus:ring-0
 
           ${inputVariants[variant]}
           ${inputSize[size]}
@@ -32,7 +32,7 @@ export default function Input({
         <label
           htmlFor={inputId}
           className=" pointer-events-none absolute left-3 top-1/2 z-10 origin-left
-            -translate-y-1/2 bg-background px-1 text-sm text-body transition-all duration-200
+            -translate-y-1/2 bg-white px-1 text-sm text-body transition-all duration-200
 
             peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-0
             peer-focus:-translate-y-1/2 peer-focus:scale-75 peer-focus:text-fg-brand peer-not-placeholder-shown:top-0
