@@ -28,7 +28,7 @@ export default function Navbar({
           aria-label={open ? "Close menu" : "Open menu"}
         >
           {open ? (
-            <X size={28} />
+            <X size={28} color="black" />
           ) : (
             <Menu size={28} />
           )}
