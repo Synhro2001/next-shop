@@ -42,7 +42,7 @@ export default function HomeClient({products, categories}: HomeClientProps) {
 
   return(
     <div className="p-4">
-      <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3">
         <Link href="/ui">
           Open UI Showcase
         </Link>
@@ -51,7 +51,7 @@ export default function HomeClient({products, categories}: HomeClientProps) {
         <CategorySlider categories={categories}  selectedCategory={selectedCategory} onChangeCategory={setSelectedCategory}/>
         <ProductGrid products={filteredProducts}/>
       </div>
-   
+     
        {/* сюда делаем как в visam разные боксы с определенной информацией */}
     </div>
   );
