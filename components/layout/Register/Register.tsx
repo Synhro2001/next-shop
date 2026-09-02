@@ -1,15 +1,15 @@
 "use client"
 
 import Background from "@/components/ui/Background/Background";
-import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card"
-import Input from "@/components/ui/Input";
 import { MoveLeft } from "lucide-react";
 import Image from "next/image"
 import Link from "next/link"
-
+import RegisterForm from "./RegisterForm";
 
 export default function Register(){
+
+
     return (
         <main className="relative min-h-screen w-full flex items-center justify-center px-3">
             <Background/>
@@ -56,42 +56,10 @@ export default function Register(){
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     </p>
                 </div>
+                <RegisterForm/>
+
                 {/* React use Form */}
-                <form className="relative z-10 space-y-4">
-                        <Input
-                            size="sm"
-                            label="Username"
-                            className="h-12 rounded-xl border-neutral-200 bg-white/70
-                                text-sm transition-all placeholder:text-neutral-400 hover:border-neutral-300
-                                focus:border-neutral-950 focus:bg-white focus:outline-none focus:ring-neutral-950/5
-                            "
-                        />
-                        <Input
-                            size="sm"
-                            label="Email address"
-                            className="h-12 rounded-xl border-neutral-200 bg-white/70
-                                text-sm transition-all placeholder:text-neutral-400 hover:border-neutral-300
-                                focus:border-neutral-950 focus:bg-white focus:outline-none focus:ring-neutral-950/5
-                            "
-                        />
-                        <Input
-                            size="sm"
-                            label="Password"
-                            className="h-12 rounded-xl border-neutral-200 bg-white/70
-                                text-sm transition-all placeholder:text-neutral-400 hover:border-neutral-300
-                                focus:border-neutral-950 focus:bg-white focus:outline-none focus:ring-neutral-950/5
-                            "
-                        />
-                        <Button
-                            type="submit"
-                            className="mt-2 h-12 w-full rounded-xl
-                                shadow-[0_5px_12px_rgba(0,0,0,0.12)] transition-all hover:bg-black hover:shadow-[0_8px_20px_rgba(0,0,0,0.16)]
-                                active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-black/10
-                            "
-                        >
-                            Create account
-                        </Button>
-                </form>
+               
                 </Card>
 
             </div>
