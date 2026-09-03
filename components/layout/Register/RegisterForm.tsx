@@ -7,24 +7,27 @@ import { registerSchema } from "./register.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-
-
 export default function RegisterForm() {
 
     const { 
         register,
         handleSubmit,
-        formState: {errors},
+        formState: {
+            errors,
+            isSubmitting,
+            isValid
+        },
     } = useForm<z.infer<typeof registerSchema>>({
-        resolver: zodResolver(registerSchema)
+        resolver: zodResolver(registerSchema),
+        mode: "onChange",
+      
     })
-
-
+    
     return (
         <form onSubmit={handleSubmit((data) => {
             console.log(data)
         })} 
-            className="relative z-10 space-y-4"
+            className="relative z-10 space-y-4 flex flex-col gap-3"
         >
             <Input
                 {...register("username")}
@@ -70,12 +73,13 @@ export default function RegisterForm() {
             />
             <Button
                 type="submit"
+                disabled={!isValid || isSubmitting}
                 className="mt-2 h-12 w-full rounded-xl
                     shadow-[0_5px_12px_rgba(0,0,0,0.12)] transition-all hover:bg-black hover:shadow-[0_8px_20px_rgba(0,0,0,0.16)]
                     active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-black/10
                 "
             >
-                Create account
+                {isSubmitting ? "Creating..." : "Create account"}
             </Button>
         </form>
     )

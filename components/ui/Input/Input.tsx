@@ -43,11 +43,12 @@ export default function Input({
         </label>
       )}
 
-      {error && (
-        <p className="mt-1 text-sm text-red-500">
-          {error}
-        </p>
-      )}
+     {error && (
+    <span className="absolute left-0 top-full mt-1 text-sm leading-4 text-red-500">
+      {error}
+    </span>
+  )}
+
     </div>
   );
 }
