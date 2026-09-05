@@ -1,11 +1,10 @@
 "use client"
 
 import Background from "@/components/ui/Background/Background"
-import Button from "@/components/ui/Button"
 import Card from "@/components/ui/Card"
-import Input from "@/components/ui/Input"
 import Image from "next/image"
 import Link from "next/link"
+import LoginForm from "./LoginForm"
 
 export default function Login() {
     
@@ -45,43 +44,7 @@ export default function Login() {
                     </div>
 
                     {/* Form */}
-                    <form className="relative z-10 space-y-4">
-
-                        <Input
-                            size="sm"
-                            label="Email address"
-                            className="h-12 rounded-xl border-neutral-200 bg-white/70
-                                text-sm transition-all placeholder:text-neutral-400 hover:border-neutral-300
-                                focus:border-neutral-950 focus:bg-white focus:outline-none focus:ring-neutral-950/5
-                            "
-                        />
-                        <Input
-                            size="sm"
-                            label="Password"
-                            className="h-12 rounded-xl border-neutral-200 bg-white/70
-                                text-sm transition-all placeholder:text-neutral-400 hover:border-neutral-300
-                                focus:border-neutral-950 focus:bg-white focus:outline-none focus:ring-neutral-950/5
-                            "
-                        />
-
-                        <div className="flex justify-end pt-1">
-                            <button
-                                type="button"
-                                className="text-sm font-medium text-neutral-500 transition-colors hover:text-black"
-                            >
-                                Forgot password?
-                            </button>
-                        </div>
-
-                        <Button
-                            type="submit"
-                            className="mt-2 h-12 w-full rounded-xl shadow-[0_5px_12px_rgba(0,0,0,0.12)] transition-all hover:bg-black hover:shadow-[0_8px_20px_rgba(0,0,0,0.16)]
-                                active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-black/10
-                            "
-                        >
-                            Sign in
-                        </Button>
-                    </form>
+                    <LoginForm/>
 
                     <div className="relative z-10 my-7 flex items-center gap-4">
                         <div className="h-px flex-1 bg-neutral-200" />

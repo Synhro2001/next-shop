@@ -1,6 +1,9 @@
+
 "use client";
 
+import { useState } from "react";
 import { InputProps, inputSize, inputVariants } from "./input.types";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function Input({
   variant = "primary",
@@ -8,15 +11,25 @@ export default function Input({
   label,
   error,
   className,
+  type,
   ...props
 }: InputProps) {
   const inputId = props.id;
+
+  const [showPassword, setShowPassword] = useState(false)
+
+  const isPassword = type === "password";
+
+  const inputType = isPassword ? showPassword ? "text" : "password" : type;
+  
+
 
   return (
     <div className="relative w-full">
       <input
         {...props}
         id={inputId}
+        type={inputType}
         placeholder=""
         className={`peer block  w-full appearance-none rounded-lg border bg-transparent px-3 py-3 text-sm text-heading
           outline-none transition-colors duration-200 border-default-medium focus:ring-0
@@ -24,6 +37,7 @@ export default function Input({
           ${inputVariants[variant]}
           ${inputSize[size]}
           ${error ? inputVariants.danger : ""}
+          ${isPassword ? "pr-11" : ""}
           ${className ?? ""}
         `}
       />
@@ -43,11 +57,33 @@ export default function Input({
         </label>
       )}
 
-     {error && (
-    <span className="absolute left-0 top-full mt-1 text-sm leading-4 text-red-500">
-      {error}
-    </span>
-  )}
+      {isPassword && (
+        <button
+          type="button"
+          onClick={() => setShowPassword((prev) => !prev)}
+          className="
+            absolute right-3 top-1/2
+            -translate-y-1/2
+            text-gray-500
+            hover:text-black
+          "
+          aria-label={
+            showPassword ? "Hide password" : "Show password"
+          }
+        >
+          {showPassword ? (
+            <EyeOff size={18} />
+          ) : (
+            <Eye size={18} />
+          )}
+        </button>
+      )}
+
+      {error && (
+        <span className="absolute left-0 top-full mt-1 text-sm leading-4 text-red-500">
+        {error}
+        </span>
+      )}
 
     </div>
   );

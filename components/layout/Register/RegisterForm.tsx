@@ -24,9 +24,10 @@ export default function RegisterForm() {
     })
     
     return (
-        <form onSubmit={handleSubmit((data) => {
-            console.log(data)
-        })} 
+        <form 
+            onSubmit={handleSubmit((data) => {
+                console.log(data)
+            })} 
             className="relative z-10 space-y-4 flex flex-col gap-3"
         >
             <Input
