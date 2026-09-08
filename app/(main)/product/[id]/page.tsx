@@ -1,11 +1,12 @@
 
 import EmptyState from "@/components/ui/EmptyState"
-import ProductGallery from "./ProductGallery/ProductGallery"
-import ProductInfo from "./ProductInfo"
-import RelatedProducts from "./RelatedProducts/RelatedProducts"
+
+import RelatedProducts from "../../../../components/layout/Product/RelatedProducts/RelatedProducts"
 import ProductGoogleMap from "@/components/layout/ProductGoogleMap/ProductGoogleMap"
 import { getProductById } from "@/lib/products/getProductById"
 import { getRelatedProducts } from "@/lib/products/getRelatedProducts"
+import ProductGallery from "@/components/layout/Product/ProductGallery/ProductGallery"
+import ProductInfo from "@/components/layout/Product/ProductInfo"
 
 export default async  function ProductPage({
     params,

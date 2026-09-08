@@ -1,12 +1,12 @@
 "use client"
 
-import { ProductSwiperProps } from "../product-page.types";
 import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css'
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import { ProductSwiperProps } from "@/types/products/product-page.types";
 
 export default function ProductSwiper({
     images,
