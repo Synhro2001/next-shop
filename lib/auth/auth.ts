@@ -25,7 +25,7 @@ export const verifyPassword = async (
 
 export async function generateToken(payload: {
     userId: string
-    email: string;
+    // email: string;
 }): Promise<string> {
     return new SignJWT(payload)
         .setProtectedHeader({alg: "HS256"})
