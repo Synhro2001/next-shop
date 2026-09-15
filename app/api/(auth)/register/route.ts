@@ -1,4 +1,5 @@
-import { generateToken, hashPassword } from "@/lib/auth/auth";
+import { hashPassword } from "@/lib/auth/auth";
+import { createSession } from "@/lib/auth/session";
 import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -35,7 +36,7 @@ export async function POST(request: NextRequest) {
             )
         }
 
-        const hashedPassword = await hashPassword(password)
+        const hashedPassword = await hashPassword(password);
 
         const user = await prisma.user.create({
             data: {
@@ -45,25 +46,21 @@ export async function POST(request: NextRequest) {
             }
         })
 
-        //Generate Token
-        const token = await generateToken({
-            userId: user.id
-        })
-
+        const sessionToken = await createSession(user.id);
+        
         //Create response
         const response = NextResponse.json({
             user: {
                 id: user.id,
                 username: user.username,
                 email: user.email,
-                token,
 
             }
         })
 
 
         //Set cookie
-        response.cookies.set("token", token, {
+        response.cookies.set("session", sessionToken, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
             sameSite: "lax",
