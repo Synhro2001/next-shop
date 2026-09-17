@@ -7,8 +7,16 @@ import { loginSchema } from "./login.schema"
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useState } from "react"
+import { useRouter } from "next/navigation"
+
+type LoginFormData = z.infer<typeof loginSchema>;
 
 export default function LoginForm() { 
+
+    const [serverError, setServerError] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
+    const router = useRouter();
 
     const {
         register,
@@ -16,15 +24,41 @@ export default function LoginForm() {
         formState: {
             errors,
         }
-    } = useForm<z.infer<typeof loginSchema>>({
+    } = useForm<LoginFormData>({
         resolver: zodResolver(loginSchema)
     })
 
+    async function onSubmit(data:LoginFormData) {
+        setServerError("")
+        setIsLoading(true)
+
+        try {
+            const response = await fetch("/api/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data)
+            })
+
+            const result = await response.json();
+
+            if(!response.ok) {
+                setServerError(result.error)
+                return
+            }
+
+            router.push("/");
+        } catch (error) {
+            setServerError("Something went wrong")
+        } finally {
+            setIsLoading(false)
+        }
+    }
+
     return (
         <form
-            onSubmit={handleSubmit((data) => {
-                console.log(data)
-            })}
+            onSubmit={handleSubmit(onSubmit)}
             className="relative z-10 space-y-4 flex flex-col gap-3"
         >
 
@@ -58,14 +92,19 @@ export default function LoginForm() {
                     Forgot password?
                 </button>
             </div>
-
+            {serverError && (
+                <p className="text-sm text-red-500">
+                    {serverError}
+                </p>
+            )}
             <Button
                 type="submit"
+                disabled={isLoading}
                 className="mt-2 h-12 w-full rounded-xl shadow-[0_5px_12px_rgba(0,0,0,0.12)] transition-all hover:bg-black hover:shadow-[0_8px_20px_rgba(0,0,0,0.16)]
                     active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-black/10
                 "
             >
-                Sign in
+                {isLoading ? "Signing in..." : "Sign in"}
             </Button>
         </form>
     )
