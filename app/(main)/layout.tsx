@@ -1,10 +1,14 @@
 import Navbar from "@/components/layout/Navbar/Navbar";
+import { requireAuth } from "@/lib/auth/requireAuth";
 
-export default function MainLayout({
+export default async function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
+  await requireAuth()
+  
   return (
     <>
       <Navbar

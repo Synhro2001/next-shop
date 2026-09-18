@@ -3,10 +3,11 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 export async function POST() {
-
+    console.log("🔥 LOGOUT ROUTE CALLED");
     const cookieStore = await cookies();
     const sessionToken = cookieStore.get("session")?.value;
 
+    console.log("🔥 SESSION TOKEN:", sessionToken);
     if(sessionToken) {
         await deleteSession(sessionToken)
     }
