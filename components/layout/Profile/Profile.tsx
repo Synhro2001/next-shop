@@ -13,7 +13,6 @@ export default function Profile({ user }: ProfileProps) {
 
                 <div className="flex flex-col items-center gap-4">
                     <Avatar
-                        src={user.avatar}
                         name={user.username}
                         size="lg"
                     />

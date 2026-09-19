@@ -4,17 +4,37 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NavbarProps } from "./navbar.types";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Navbar({
   title,
   links = [],
 }: NavbarProps) {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("/api/logout", {
+        method: "POST",
+      });
+
+      if (!response.ok) {
+        console.error("Logout failed");
+        return;
+      }
+
+      setOpen(false);
+      router.push("/login");
+      router.refresh();
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
 
   return (
     <div className="p-4 bg-primary">
       <nav className="flex justify-between items-center">
-    
         <Link
           href="/"
           className="text-xl text-white font-bold z-50"
@@ -61,6 +81,23 @@ export default function Navbar({
               {link.label}
             </Link>
           ))}
+
+          <button
+            type="button"
+            onClick={handleLogout}
+            className="
+              p-4
+              bg-red-500
+              text-white
+              font-semibold
+              rounded-2xl
+              transition-opacity
+              hover:opacity-90
+              text-left
+            "
+          >
+            Logout
+          </button>
         </nav>
       </div>
     </div>

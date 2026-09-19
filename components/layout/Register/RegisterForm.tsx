@@ -5,9 +5,20 @@ import { useForm } from "react-hook-form";
 import { registerSchema } from "./register.schema";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+
 import { z } from "zod";
+import { useState } from "react"
+import { useRouter } from "next/navigation"
+
+
+type RegisterFormData = z.infer<typeof registerSchema>
 
 export default function RegisterForm() {
+
+    
+    const [serverError, setServerError] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
+    const router = useRouter();
 
     const { 
         register,
@@ -17,17 +28,43 @@ export default function RegisterForm() {
             isSubmitting,
             isValid
         },
-    } = useForm<z.infer<typeof registerSchema>>({
+    } = useForm<RegisterFormData>({
         resolver: zodResolver(registerSchema),
         mode: "onChange",
       
     })
+
+    async function onSubmit(data:RegisterFormData) {
+        setServerError("")
+        setIsLoading(true)
+
+        try {
+            const response = await fetch("/api/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+
+            const result = await response.json()
+
+            if(!response.ok){
+                setServerError(result.error)
+                return
+            }
+
+            router.push("/login")
+        } catch (error) {
+            setServerError("Something went wrong")
+        } finally {
+            setIsLoading(false)
+        }
+    }
     
     return (
         <form 
-            onSubmit={handleSubmit((data) => {
-                console.log(data)
-            })} 
+            onSubmit={handleSubmit(onSubmit)} 
             className="relative z-10 space-y-4 flex flex-col gap-3"
         >
             <Input
